@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Playlist Sammlung</title>
+
+<style>
+:root{
+  --bg-top:#f0d9c2;
+  --bg-bottom:#f7efe6;
+
+  --sunset:#d9892b;
+  --sunset-2:#e2a14a;
+  --sunset-3:#c8741f;
+
+  --forest:#1f3a2e;
+
+  --border:#4a2e1f;
+  --radius:18px;
+}
+
+*{box-sizing:border-box;}
+html,body{height:100%;}
+
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  background:linear-gradient(180deg,var(--bg-top),var(--bg-bottom));
+  color:#2a1a12;
+}
+
+body.no-scroll{
+  overflow:hidden;
+}
+
+.app{
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  max-width:430px;
+  margin:0 auto;
+}
+
+/* HEADER */
+header{
+  color:#fff3e6;
+  padding:20px 16px 20px;
+  position:sticky;
+  top:0;
+  z-index:10;
+
+  background:
+    radial-gradient(520px 220px at 20% 10%, rgba(255,210,140,.35), rgba(0,0,0,0) 60%),
+    linear-gradient(180deg,
+      var(--sunset-2) 0%,
+      var(--sunset) 30%,
+      var(--sunset-3) 58%,
+      var(--forest) 100%
+    );
+}
+
+.brandbar{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.brand{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+  min-width:0;
+}
+
+.brand .title{
+  font-size:19px;
+  font-weight:700;
+  letter-spacing:.4px;
+}
+
+.brand .sub{
+  font-size:12px;
+  opacity:.9;
+}
+
+/* Brief-Icon Button */
+.letter-btn{
+  appearance:none;
+  -webkit-appearance:none;
+  border:2px solid rgba(255,243,230,.65);
+  background: rgba(255,253,249,.14);
+  color:#fff3e6;
+  width:40px;
+  height:40px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  flex:0 0 auto;
+  transition: transform .08s ease, filter .08s ease;
+  font-size:18px;
+  line-height:1;
+}
+
+.letter-btn:active{
+  transform:scale(.98);
+  filter:brightness(.96);
+}
+
+.letter-btn:focus-visible{
+  outline:3px solid rgba(255,243,230,.55);
+  outline-offset:3px;
+}
+
+/* MAIN */
+main{
+  flex:1;
+  padding:16px 14px 22px;
+}
+
+.grid{
+  display:grid;
+  gap:14px;
+}
+
+/* CARD (jetzt Links) */
+.playlist-btn{
+  text-decoration:none;
+  color:inherit;
+
+  border:2px solid var(--border);
+  border-radius:var(--radius);
+  overflow:hidden;
+  padding:0;
+  cursor:pointer;
+  width:100%;
+  display:block;
+
+  background:
+    radial-gradient(380px 180px at 18% 8%, rgba(255,255,255,.55), rgba(255,255,255,0) 58%),
+    linear-gradient(180deg, #fdf6ee 0%, #f7ede3 62%, #f2e5d9 100%);
+
+  transition:transform .08s ease, filter .08s ease;
+}
+
+.playlist-head{
+  padding:12px 14px;
+  font-size:14px;
+  font-weight:700;
+  text-align:left;
+  line-height:1.2;
+
+  background: linear-gradient(180deg, #fffdf9 0%, #f8efe6 100%);
+  border-bottom:2px solid var(--border);
+  border-left:3px solid var(--sunset);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.8),
+    inset 0 -8px 12px rgba(74,46,31,.10);
+}
+
+.playlist-img{
+  width:100%;
+  display:block;
+}
+
+.playlist-btn:active{
+  transform:scale(.992);
+  filter:brightness(.94);
+  box-shadow:0 0 0 2px var(--forest) inset;
+}
+
+/* FOOTER */
+footer{
+  background:#2f1d14;
+  color:#f6e6d8;
+  padding:18px 16px 22px;
+}
+
+.footer-row{
+  display:flex;
+  justify-content:space-between;
+  font-size:12px;
+  opacity:.9;
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<header>
+  <div class="brandbar">
+    <div class="brand">
+      <div class="title">Playlists für einzelne Momente</div>
+      <div class="sub">Von Julien für Johanna</div>
+    </div>
+
+    <button class="letter-btn" type="button">
+      ✉︎
+    </button>
+  </div>
+</header>
+
+<main>
+  <div class="grid">
+
+    <a href="#" class="playlist-btn">
+      <div class="playlist-head">Wenn du keine Motivation hast:</div>
+      <img class="playlist-img" src="assets/images/imageTest.png" alt="">
+    </a>
+
+    <a href="#" class="playlist-btn">
+      <div class="playlist-head">Wenn du mal traurig bist:</div>
+      <img class="playlist-img" src="assets/images/imageTest.png" alt="">
+    </a>
+
+    <a href="#" class="playlist-btn">
+      <div class="playlist-head">Wenn du dich einsam fühlst:</div>
+      <img class="playlist-img" src="assets/images/imageTest.png" alt="">
+    </a>
+
+    <a href="#" class="playlist-btn">
+      <div class="playlist-head">Wenn du nervös bist:</div>
+      <img class="playlist-img" src="assets/images/imageTest.png" alt="">
+    </a>
+
+    <a href="#" class="playlist-btn">
+      <div class="playlist-head">Wenn du zu viel nachdenkst:</div>
+      <img class="playlist-img" src="assets/images/imageTest.png" alt="">
+    </a>
+
+    <a href="#" class="playlist-btn">
+      <div class="playlist-head">Wenn du jemanden zum reden brauchst:</div>
+      <img class="playlist-img" src="assets/images/imageTest.png" alt="">
+    </a>
+
+    <a href="#" class="playlist-btn">
+      <div class="playlist-head">Wenn du nicht einschlafen kannst:</div>
+      <img class="playlist-img" src="assets/images/imageTest.png" alt="">
+    </a>
+
+    <a href="#" class="playlist-btn">
+      <div class="playlist-head">Wenn du dich unaufhaltsam fühlen willst:</div>
+      <img class="playlist-img" src="assets/images/imageTest.png" alt="">
+    </a>
+
+    <a href="#" class="playlist-btn">
+      <div class="playlist-head">Wenn du wieder aufstehen musst:</div>
+      <img class="playlist-img" src="assets/images/imageTest.png" alt="">
+    </a>
+
+    <a href="#" class="playlist-btn">
+      <div class="playlist-head">Wenn du jemanden vermisst:</div>
+      <img class="playlist-img" src="assets/images/imageTest.png" alt="">
+    </a>
+
+    <a href="#" class="playlist-btn">
+      <div class="playlist-head">Wenn du einen Neuanfang machen willst:</div>
+      <img class="playlist-img" src="assets/images/imageTest.png" alt="">
+    </a>
+
+    <a href="#" class="playlist-btn">
+      <div class="playlist-head">Wenn du einfach abschalten willst:</div>
+      <img class="playlist-img" src="assets/images/imageTest.png" alt="">
+    </a>
+
+    <a href="#" class="playlist-btn">
+      <div class="playlist-head">Wenn du dich klein fühlst:</div>
+      <img class="playlist-img" src="assets/images/imageTest.png" alt="">
+    </a>
+
+    <a href="https://open.spotify.com/playlist/7w6Tq1mwJwDjvJrGUfEcGS" class="playlist-btn">
+      <div class="playlist-head">Wenn du dich verloren fühlst:</div>
+      <img class="playlist-img" src="assets/images/imageTest.png" alt="">
+    </a>
+
+  </div>
+</main>
+
+<footer>
+  <div class="footer-row">
+    <div>© 2026 Gutberlet Industries</div>
+    <div>Keine Rechte vorbehalten</div>
+  </div>
+</footer>
+
+</div>
+</body>
+</html>
